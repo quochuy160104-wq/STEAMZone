@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff8ed">
+<title>STEAMZone – Học sáng tạo để kiến tạo</title>
+<meta name="description" content="STEAMZone mang đến các chương trình STEM/STEAM thực tiễn, giải pháp EdTech và thiết bị giáo dục hiện đại.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;font-family:Montserrat,Arial,sans-serif}img{max-width:100%}</style>
+</head>
+<body>
+<section class="sz-hero" aria-label="STEAMZone - Giáo dục STEM/STEAM">
+  <div class="sz-hero__content">
+    <p class="sz-hero__description">
+      STEAMZone mang đến các chương trình STEM/STEAM thực tiễn, giải pháp EdTech và thiết bị giáo dục hiện đại, giúp học sinh khám phá, thực hành, sáng tạo, phát triển kỹ năng 5C và sẵn sàng cho tương lai.
+    </p>
+
+    <div class="sz-hero__actions">
+      <a class="sz-btn sz-btn--primary" href="https://stemzone.vn/khoa-hoc/">
+        Khám phá chương trình <span aria-hidden="true">→</span>
+      </a>
+
+      <a class="sz-btn sz-btn--outline" href="https://stemzone.vn/lien-he/">
+        Liên hệ tư vấn <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* Giới hạn CSS trong banner, tránh ảnh hưởng website */
+.sz-hero,
+.sz-hero * {
+  box-sizing: border-box;
+}
+
+.sz-hero {
+  position: relative !important;
+  width: 100vw !important;
+  max-width: none !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: 0 !important;
+
+  height: clamp(500px, 36.13vw, 620px);
+  min-height: 500px;
+  padding: 0 !important;
+
+  background-color: #fff8ef;
+  background-image: url("https://stemzone.vn/wp-content/uploads/2026/10/Hoc-sang-tao-kien-tao-tuong-lai-1.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+  isolation: isolate;
+  font-family: 'Montserrat', Arial, sans-serif !important;
+}
+
+/* Cố định vị trí nội dung trên máy tính */
+.sz-hero .sz-hero__content {
+  position: absolute !important;
+  z-index: 5;
+
+  left: 6%;
+  top: 59%;
+  transform: none !important;
+
+  width: 42%;
+  max-width: 610px;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-family: 'Montserrat', Arial, sans-serif !important;
+}
+
+/* Nội dung rõ nét, đậm hơn */
+.sz-hero .sz-hero__description {
+  display: block;
+  width: 100%;
+  max-width: 610px;
+
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+
+  color: #263b55 !important;
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-size: clamp(13px, 0.98vw, 16px) !important;
+  font-weight: 600 !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+  text-transform: none !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Hai nút */
+.sz-hero .sz-hero__actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+}
+
+.sz-hero .sz-btn,
+.sz-hero .sz-btn:visited {
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+
+  min-height: 48px !important;
+  margin: 0 !important;
+  padding: 12px 20px !important;
+
+  border: 2px solid #ff7929 !important;
+  border-radius: 999px !important;
+
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  white-space: nowrap;
+
+  box-shadow: none !important;
+  opacity: 1 !important;
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+/* Nút chính */
+.sz-hero .sz-btn--primary,
+.sz-hero .sz-btn--primary:visited {
+  color: #ffffff !important;
+  background: #ff812d !important;
+}
+
+.sz-hero .sz-btn--primary:hover {
+  color: #ffffff !important;
+  background: #e96816 !important;
+  border-color: #e96816 !important;
+  transform: translateY(-2px);
+}
+
+/* Nút phụ */
+.sz-hero .sz-btn--outline,
+.sz-hero .sz-btn--outline:visited {
+  color: #c9510b !important;
+  background: #fffdf9 !important;
+}
+
+.sz-hero .sz-btn--outline:hover {
+  color: #ffffff !important;
+  background: #ff812d !important;
+  border-color: #ff812d !important;
+  transform: translateY(-2px);
+}
+
+/* Laptop nhỏ */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .sz-hero {
+    height: 500px;
+    min-height: 500px;
+    background-position: center center;
+  }
+
+  .sz-hero .sz-hero__content {
+    left: 5%;
+    top: 58%;
+    width: 45%;
+  }
+
+  .sz-hero .sz-hero__description {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+    margin-bottom: 15px !important;
+  }
+
+  .sz-hero .sz-btn,
+  .sz-hero .sz-btn:visited {
+    min-height: 44px !important;
+    padding: 10px 14px !important;
+    font-size: 11px !important;
+  }
+
+  .sz-hero .sz-hero__actions {
+    gap: 8px !important;
+  }
+}
+
+/* Điện thoại và máy tính bảng dọc */
+@media (max-width: 768px) {
+  .sz-hero {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: 0 !important;
+
+    height: auto;
+    min-height: 0;
+    padding: 0 16px 28px !important;
+
+    display: block;
+    overflow: hidden;
+
+    background-color: #fff8ef;
+    background-size: 100% auto;
+    background-position: center top;
+  }
+
+  .sz-hero .sz-hero__content {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .sz-hero .sz-hero__description {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 16px !important;
+    padding: 16px !important;
+
+    color: #263b55 !important;
+    background: rgba(255, 250, 244, .98);
+    border-radius: 14px;
+
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 1.75 !important;
+  }
+
+  .sz-hero .sz-hero__actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .sz-hero .sz-btn,
+  .sz-hero .sz-btn:visited {
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 12px 16px !important;
+    font-size: 13px !important;
+    white-space: normal;
+  }
+}
+
+/* Điện thoại nhỏ */
+@media (max-width: 400px) {
+  .sz-hero {
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+  }
+
+  .sz-hero .sz-hero__description {
+    padding: 13px !important;
+    font-size: 13px !important;
+  }
+}
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+#sz-milestones,
+#sz-milestones * {
+  box-sizing: border-box;
+}
+
+#sz-milestones {
+  --sz-navy: #12385d;
+  --sz-orange: #ff641f;
+  --sz-yellow: #ffe34f;
+  --sz-white: #ffffff;
+
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  left: 50%;
+  margin-left: -50vw;
+  padding: 48px 0 42px;
+  overflow: hidden;
+  isolation: isolate;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--sz-navy);
+  background-color: #fff8ed;
+  background-image: url('https://stemzone.vn/wp-content/uploads/2026/10/Nen-truu-tuong-song-mau-pastel-1.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#sz-milestones .sz-heading {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: min(900px, 92%);
+  margin: 0 auto 36px;
+}
+
+#sz-milestones .sz-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 14px;
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -1.8px;
+  color: var(--sz-navy);
+}
+
+#sz-milestones .sz-brand {
+  display: inline-block;
+  padding: 8px 24px 10px;
+  border-radius: 100px;
+  background: var(--sz-orange);
+  color: #fff;
+  letter-spacing: -1.5px;
+}
+
+#sz-milestones .sz-subtitle {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.9;
+  font-weight: 600;
+  color: #173b5e;
+}
+
+#sz-milestones .sz-heading-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+#sz-milestones .sz-heading-line span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sz-orange);
+}
+
+#sz-milestones .sz-heading-line i {
+  display: block;
+  width: 47px;
+  height: 5px;
+  border-radius: 10px;
+  background: #ffbf24;
+}
+
+/* Carousel tràn ngang toàn màn hình */
+#sz-milestones .sz-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+#sz-milestones .sz-track {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  width: max-content;
+  padding: 0;
+  margin: 0;
+  transform: translateX(0);
+  transition: transform 650ms cubic-bezier(.22,.68,0,1);
+  will-change: transform;
+}
+
+#sz-milestones .sz-card {
+  position: relative;
+  flex: 0 0 clamp(280px, 25vw, 390px);
+  width: clamp(280px, 25vw, 390px);
+  min-height: 365px;
+  padding: 32px 30px 28px;
+  border-radius: 25px;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 8px 24px rgba(28, 55, 75, .055);
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+/* Vòng tròn trang trí ở góc thẻ */
+#sz-milestones .sz-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 190px;
+  height: 190px;
+  top: -90px;
+  right: -40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  pointer-events: none;
+}
+
+#sz-milestones .sz-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 175px;
+  height: 100px;
+  right: -20px;
+  bottom: -64px;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 100px 100px 0 0;
+  pointer-events: none;
+}
+
+/* 4 bảng màu */
+#sz-milestones .sz-orange {
+  background: #ff641f;
+  color: #fff;
+}
+
+#sz-milestones .sz-orange .sz-number {
+  color: #fff2a0;
+}
+
+#sz-milestones .sz-orange .sz-accent {
+  background: #ffe34f;
+}
+
+#sz-milestones .sz-teal {
+  background: #08aa9d;
+  color: #fff;
+}
+
+#sz-milestones .sz-teal .sz-number {
+  color: #fff2a0;
+}
+
+#sz-milestones .sz-teal .sz-accent {
+  background: #ffe34f;
+}
+
+#sz-milestones .sz-yellow {
+  background: #ffdc3f;
+  color: #15385d;
+}
+
+#sz-milestones .sz-yellow .sz-number {
+  color: #ff641f;
+}
+
+#sz-milestones .sz-yellow .sz-accent {
+  background: #ff641f;
+}
+
+#sz-milestones .sz-blue {
+  background: #2d50d7;
+  color: #fff;
+}
+
+#sz-milestones .sz-blue .sz-number,
+#sz-milestones .sz-blue .sz-card-title {
+  color: #fff29a;
+}
+
+#sz-milestones .sz-blue .sz-accent {
+  background: #fff29a;
+}
+
+#sz-milestones .sz-pink {
+  background: #e94391;
+  color: #fff;
+}
+
+#sz-milestones .sz-pink .sz-number {
+  color: #fff;
+}
+
+#sz-milestones .sz-pink .sz-accent {
+  background: #fff;
+}
+
+#sz-milestones .sz-label {
+  margin: 0 0 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -.2px;
+}
+
+#sz-milestones .sz-number {
+  display: block;
+  margin: 0 0 10px;
+  font-size: clamp(43px, 4vw, 62px);
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -2.5px;
+}
+
+#sz-milestones .sz-card-title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 800;
+  letter-spacing: -.45px;
+}
+
+#sz-milestones .sz-accent {
+  display: block;
+  width: 44px;
+  height: 6px;
+  border-radius: 20px;
+  margin: 19px 0 17px;
+}
+
+#sz-milestones .sz-description {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.9;
+  font-weight: 500;
+  overflow-wrap: break-word;
+}
+
+/* Nút điều hướng */
+#sz-milestones .sz-arrow {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255,100,31,.12);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: #ff641f;
+  box-shadow: 0 4px 18px rgba(25,45,60,.13);
+  font-family: Arial, sans-serif;
+  font-size: 29px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease,
+              box-shadow 200ms ease;
+}
+
+#sz-milestones .sz-arrow:hover {
+  background: #ff641f;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(255,100,31,.3);
+}
+
+#sz-milestones .sz-prev {
+  left: 22px;
+}
+
+#sz-milestones .sz-next {
+  right: 22px;
+}
+
+/* Dấu chỉ vị trí nhỏ gọn */
+#sz-milestones .sz-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin: 26px auto 0;
+  min-height: 10px;
+}
+
+#sz-milestones .sz-dot {
+  display: block;
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: #d8d2c8;
+  cursor: pointer;
+  transition: width 250ms ease, background 250ms ease;
+}
+
+#sz-milestones .sz-dot.is-active {
+  width: 25px;
+  flex-basis: 25px;
+  background: #ff641f;
+}
+
+/* Rê chuột lên thẻ thì thẻ nổi lên */
+@media (hover: hover) and (pointer: fine) {
+  #sz-milestones .sz-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 18px 35px rgba(28,55,75,.15);
+  }
+}
+
+@media (max-width: 900px) {
+  #sz-milestones {
+    padding: 40px 0 32px;
+  }
+
+  #sz-milestones .sz-heading {
+    margin-bottom: 28px;
+  }
+
+  #sz-milestones .sz-track {
+    gap: 16px;
+  }
+
+  #sz-milestones .sz-card {
+    flex-basis: min(76vw, 360px);
+    width: min(76vw, 360px);
+    min-height: 340px;
+    padding: 27px 24px;
+  }
+
+  #sz-milestones .sz-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+  }
+
+  #sz-milestones .sz-prev {
+    left: 10px;
+  }
+
+  #sz-milestones .sz-next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #sz-milestones {
+    padding: 32px 0 28px;
+    background-position: center;
+  }
+
+  #sz-milestones .sz-heading {
+    width: 92%;
+    margin-bottom: 23px;
+  }
+
+  #sz-milestones .sz-title {
+    gap: 7px;
+    font-size: 29px;
+    letter-spacing: -1px;
+  }
+
+  #sz-milestones .sz-brand {
+    padding: 7px 16px 8px;
+    letter-spacing: -.8px;
+  }
+
+  #sz-milestones .sz-subtitle {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  #sz-milestones .sz-track {
+    gap: 12px;
+  }
+
+  #sz-milestones .sz-card {
+    flex-basis: 82vw;
+    width: 82vw;
+    min-height: 330px;
+    padding: 25px 23px;
+    border-radius: 21px;
+  }
+
+  #sz-milestones .sz-number {
+    font-size: 48px;
+  }
+
+  #sz-milestones .sz-card-title {
+    font-size: 18px;
+  }
+
+  #sz-milestones .sz-description {
+    font-size: 12px;
+    line-height: 1.85;
+  }
+
+  #sz-milestones .sz-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 23px;
+  }
+
+  #sz-milestones .sz-prev {
+    left: 7px;
+  }
+
+  #sz-milestones .sz-next {
+    right: 7px;
+  }
+
+  #sz-milestones .sz-pagination {
+    margin-top: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sz-milestones .sz-track,
+  #sz-milestones .sz-card,
+  #sz-milestones .sz-dot {
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+
+<section id="sz-milestones">
+  <header class="sz-heading">
+    <h2 class="sz-title">
+      <span>Cột mốc</span>
+      <span class="sz-brand">STEAMZone</span>
+    </h2>
+
+    <p class="sz-subtitle">
+      Đồng hành cùng nhà trường, giáo viên và học sinh trên hành trình
+      khám phá, sáng tạo và kiến tạo tương lai.
+    </p>
+
+    <div class="sz-heading-line" aria-hidden="true">
+      <span></span><i></i><span></span>
+    </div>
+  </header>
+
+  <div class="sz-carousel">
+    <div class="sz-track" id="sz-track">
+
+      <article class="sz-card sz-orange">
+        <p class="sz-label">Kết nối giáo dục</p>
+        <strong class="sz-number">300+</strong>
+        <h3 class="sz-card-title">Phòng STEM/STEAM được xây dựng</h3>
+        <span class="sz-accent"></span>
+        <p class="sz-description">
+          Đồng hành cùng nhà trường kiến tạo môi trường học tập hiện đại,
+          sáng tạo và giàu trải nghiệm.
+        </p>
+      </article>
+
+      <article class="sz-card sz-teal">
+        <p class="sz-label">Cộng đồng học tập</p>
+        <strong class="sz-number">5.000+</strong>
+        <h3 class="sz-card-title">Học sinh trải nghiệm</h3>
+        <span class="sz-accent"></span>
+        <p class="sz-description">
+          Khám phá khoa học, thực hành công nghệ và phát triển tư duy
+          qua nhiều hoạt động STEM/STEAM.
+        </p>
+      </article>
+
+      <article class="sz-card sz-yellow">
+        <p class="sz-label">Trường học kết nối</p>
+        <strong class="sz-number">200+</strong>
+        <h3 class="sz-card-title">Trường học đồng hành</h3>
+        <span class="sz-accent"></span>
+        <p class="sz-description">
+          Cùng nhà trường xây dựng môi trường học tập thực tiễn,
+          sáng tạo và hội nhập.
+        </p>
+      </article>
+
+      <article class="sz-card sz-blue">
+        <p class="sz-label">Giải pháp giáo dục</p>
+        <strong class="sz-number">20+</strong>
+        <h3 class="sz-card-title">Giải pháp giáo dục STEM/STEAM</h3>
+        <span class="sz-accent"></span>
+        <p class="sz-description">
+          Kết hợp học cụ, robotics, lập trình và công nghệ để biến
+          kiến thức thành trải nghiệm thực tế.
+        </p>
+      </article>
+
+      <article class="sz-card sz-pink">
+        <p class="sz-label">Hoạt động trải nghiệm</p>
+        <strong class="sz-number">50+</strong>
+        <h3 class="sz-card-title">Chương trình và hoạt động STEM</h3>
+        <span class="sz-accent"></span>
+        <p class="sz-description">
+          Tổ chức ngày hội, workshop, cuộc thi và các chương trình
+          trải nghiệm đa dạng trong và ngoài trường học.
+        </p>
+      </article>
+
+    </div>
+
+    <button class="sz-arrow sz-prev" type="button"
+      aria-label="Thẻ trước">&#8249;</button>
+    <button class="sz-arrow sz-next" type="button"
+      aria-label="Thẻ tiếp theo">&#8250;</button>
+  </div>
+
+  <nav class="sz-pagination" aria-label="Chọn cột mốc">
+    <button class="sz-dot is-active" type="button" aria-label="Cột mốc 1"></button>
+    <button class="sz-dot" type="button" aria-label="Cột mốc 2"></button>
+    <button class="sz-dot" type="button" aria-label="Cột mốc 3"></button>
+    <button class="sz-dot" type="button" aria-label="Cột mốc 4"></button>
+    <button class="sz-dot" type="button" aria-label="Cột mốc 5"></button>
+  </nav>
+</section>
+
+<script>
+(function () {
+  function initSteamZoneMilestones() {
+    const root = document.getElementById('sz-milestones');
+    if (!root || root.dataset.ready === '1') return;
+
+    const track = root.querySelector('#sz-track');
+    const prev = root.querySelector('.sz-prev');
+    const next = root.querySelector('.sz-next');
+    const dots = Array.from(root.querySelectorAll('.sz-dot'));
+
+    if (!track || !prev || !next || !dots.length) return;
+
+    root.dataset.ready = '1';
+
+    let cards = Array.from(track.children);
+    let timer = null;
+    let busy = false;
+    let paused = false;
+    let activeIndex = 0;
+
+    const INTERVAL = 6500;
+    const DURATION = 650;
+
+    function stepSize() {
+      if (cards.length < 2) return 0;
+      const first = cards[0];
+      const second = cards[1];
+      return second.getBoundingClientRect().left -
+             first.getBoundingClientRect().left;
+    }
+
+    function updateDots() {
+      dots.forEach(function (dot, index) {
+        dot.classList.toggle('is-active', index === activeIndex);
+        if (index === activeIndex) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    function syncCards() {
+      cards = Array.from(track.children);
+    }
+
+    function moveNext() {
+      if (busy) return;
+
+      syncCards();
+      const step = stepSize();
+      if (!step) return;
+
+      busy = true;
+      activeIndex = (activeIndex + 1) % cards.length;
+      updateDots();
+
+      track.style.transition =
+        'transform ' + DURATION + 'ms cubic-bezier(.22,.68,0,1)';
+      track.style.transform = 'translateX(-' + step + 'px)';
+
+      const finish = function () {
+        track.removeEventListener('transitionend', finish);
+
+        // Chuyển thẻ đầu xuống cuối mà không nhảy về đầu carousel.
+        track.style.transition = 'none';
+        track.appendChild(track.firstElementChild);
+        track.style.transform = 'translateX(0)';
+        syncCards();
+
+        // Đồng bộ lại thứ tự sau khi hoán đổi thẻ.
+        void track.offsetHeight;
+        track.style.transition =
+          'transform ' + DURATION + 'ms cubic-bezier(.22,.68,0,1)';
+
+        busy = false;
+      };
+
+      track.addEventListener('transitionend', finish);
+    }
+
+    function movePrev() {
+      if (busy) return;
+
+      syncCards();
+      const step = stepSize();
+      if (!step) return;
+
+      busy = true;
+      activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+      updateDots();
+
+      // Đưa thẻ cuối lên đầu rồi trượt về vị trí ban đầu.
+      track.style.transition = 'none';
+      track.insertBefore(track.lastElementChild, track.firstElementChild);
+      track.style.transform = 'translateX(-' + step + 'px)';
+      syncCards();
+
+      void track.offsetHeight;
+
+      track.style.transition =
+        'transform ' + DURATION + 'ms cubic-bezier(.22,.68,0,1)';
+      track.style.transform = 'translateX(0)';
+
+      const finish = function () {
+        track.removeEventListener('transitionend', finish);
+        busy = false;
+      };
+
+      track.addEventListener('transitionend', finish);
+    }
+
+    function goTo(index) {
+      if (busy) return;
+
+      syncCards();
+      const count = cards.length;
+      if (index === activeIndex || !count) return;
+
+      // Chọn hướng đi ngắn nhất trên vòng tròn.
+      let forward = (index - activeIndex + count) % count;
+      let backward = (activeIndex - index + count) % count;
+
+      const action = forward <= backward ? moveNext : movePrev;
+      const steps = Math.min(forward, backward);
+
+      let done = 0;
+      function runStep() {
+        if (done >= steps) return;
+        if (forward <= backward) {
+          moveNext();
+        } else {
+          movePrev();
+        }
+        done++;
+        if (done < steps) {
+          setTimeout(runStep, DURATION + 40);
+        }
+      }
+      runStep();
+    }
+
+    function stopAuto() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function startAuto() {
+      stopAuto();
+      if (paused || document.hidden) return;
+      timer = setInterval(function () {
+        if (!paused && !document.hidden) moveNext();
+      }, INTERVAL);
+    }
+
+    next.addEventListener('click', function () {
+      moveNext();
+      startAuto();
+    });
+
+    prev.addEventListener('click', function () {
+      movePrev();
+      startAuto();
+    });
+
+    dots.forEach(function (dot, index) {
+      dot.addEventListener('click', function () {
+        goTo(index);
+        startAuto();
+      });
+    });
+
+    root.addEventListener('mouseenter', function () {
+      paused = true;
+      stopAuto();
+    });
+
+    root.addEventListener('mouseleave', function () {
+      paused = false;
+      startAuto();
+    });
+
+    root.addEventListener('focusin', function () {
+      paused = true;
+</body>
+</html>
