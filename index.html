@@ -1011,5 +1011,1335 @@
 
     root.addEventListener('focusin', function () {
       paused = true;
+      stopAuto();
+    });
+
+    root.addEventListener('focusout', function (event) {
+      if (!root.contains(event.relatedTarget)) {
+        paused = false;
+        startAuto();
+      }
+    });
+
+    document.addEventListener('visibilitychange', startAuto);
+
+    // Cập nhật vị trí khi đổi kích thước màn hình.
+    window.addEventListener('resize', function () {
+      track.style.transition = 'none';
+      track.style.transform = 'translateX(0)';
+      void track.offsetHeight;
+      track.style.transition =
+        'transform ' + DURATION + 'ms cubic-bezier(.22,.68,0,1)';
+    });
+
+    updateDots();
+    startAuto();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener(
+      'DOMContentLoaded', initSteamZoneMilestones, { once: true }
+    );
+  } else {
+    initSteamZoneMilestones();
+  }
+
+  // Hỗ trợ trình dựng tải lại khối HTML sau khi khởi tạo trang.
+  setTimeout(initSteamZoneMilestones, 500);
+})();
+</script>
+<!-- STEAMZONE - 12 LĨNH VỰC STEM -->
+<section id="sz-stem-section">
+  <div class="sz-stem-bg"></div>
+  <div class="sz-stem-overlay"></div>
+
+  <div class="sz-stem-heading">
+    <span class="sz-eyebrow">KHÁM PHÁ · SÁNG TẠO · KIẾN TẠO</span>
+    <h2>Khám phá <span>12 lĩnh vực STEM</span></h2>
+    <p>Khơi mở tư duy, nuôi dưỡng sáng tạo và phát triển kỹ năng tương lai.</p>
+  </div>
+
+  <div class="sz-stem-stage">
+    <!-- 12 lĩnh vực được sắp xếp quanh tâm -->
+    <button class="sz-node" style="--x:50%;--y:7%"
+      data-title="Kỹ thuật xây dựng"
+      data-desc="Khám phá cấu trúc, thiết kế mô hình và nguyên lý xây dựng thông qua các hoạt động thực hành.">
+      <span class="sz-icon">🏗️</span><span class="sz-number">01</span>
+      <span class="sz-node-name">Kỹ thuật xây dựng</span>
+    </button>
+
+    <button class="sz-node" style="--x:70%;--y:12%"
+      data-title="Lập trình"
+      data-desc="Làm quen với tư duy thuật toán, lập trình trực quan và cách điều khiển sản phẩm công nghệ.">
+      <span class="sz-icon">💻</span><span class="sz-number">02</span>
+      <span class="sz-node-name">Lập trình</span>
+    </button>
+
+    <button class="sz-node" style="--x:86%;--y:27%"
+      data-title="Nông nghiệp thông minh"
+      data-desc="Tìm hiểu cây trồng, cảm biến và các giải pháp công nghệ ứng dụng trong nông nghiệp.">
+      <span class="sz-icon">🌱</span><span class="sz-number">03</span>
+      <span class="sz-node-name">Nông nghiệp thông minh</span>
+    </button>
+
+    <button class="sz-node" style="--x:93%;--y:50%"
+      data-title="Thiết kế sáng tạo"
+      data-desc="Phát triển ý tưởng, khả năng thiết kế và sáng tạo sản phẩm qua các dự án thực hành.">
+      <span class="sz-icon">🎨</span><span class="sz-number">04</span>
+      <span class="sz-node-name">Thiết kế sáng tạo</span>
+    </button>
+
+    <button class="sz-node" style="--x:86%;--y:73%"
+      data-title="Khoa học thực nghiệm"
+      data-desc="Quan sát, đặt câu hỏi, thực hiện thí nghiệm và tìm hiểu các hiện tượng khoa học.">
+      <span class="sz-icon">🧪</span><span class="sz-number">05</span>
+      <span class="sz-node-name">Khoa học thực nghiệm</span>
+    </button>
+
+    <button class="sz-node" style="--x:70%;--y:88%"
+      data-title="Robot và tự động hóa"
+      data-desc="Khám phá cơ cấu robot, cảm biến và cách xây dựng các mô hình tự động hóa.">
+      <span class="sz-icon">🤖</span><span class="sz-number">06</span>
+      <span class="sz-node-name">Robot và tự động hóa</span>
+    </button>
+
+    <button class="sz-node" style="--x:50%;--y:93%"
+      data-title="IoT – Internet vạn vật"
+      data-desc="Tìm hiểu cách thiết bị kết nối, trao đổi dữ liệu và ứng dụng IoT trong đời sống.">
+      <span class="sz-icon">📡</span><span class="sz-number">07</span>
+      <span class="sz-node-name">IoT – Internet vạn vật</span>
+    </button>
+
+    <button class="sz-node" style="--x:30%;--y:88%"
+      data-title="Năng lượng tái tạo"
+      data-desc="Tìm hiểu năng lượng mặt trời, sử dụng năng lượng hiệu quả và phát triển bền vững.">
+      <span class="sz-icon">☀️</span><span class="sz-number">08</span>
+      <span class="sz-node-name">Năng lượng tái tạo</span>
+    </button>
+
+    <button class="sz-node" style="--x:14%;--y:73%"
+      data-title="In 3D và chế tạo"
+      data-desc="Từ ý tưởng đến mô hình: tìm hiểu thiết kế 3D, tạo mẫu và quy trình chế tạo sản phẩm.">
+      <span class="sz-icon">🖨️</span><span class="sz-number">09</span>
+      <span class="sz-node-name">In 3D và chế tạo</span>
+    </button>
+
+    <button class="sz-node" style="--x:7%;--y:50%"
+      data-title="Điện tử và mạch điện"
+      data-desc="Làm quen với linh kiện, mạch điện và nguyên lý hoạt động của thiết bị điện tử.">
+      <span class="sz-icon">🔌</span><span class="sz-number">10</span>
+      <span class="sz-node-name">Điện tử và mạch điện</span>
+    </button>
+
+    <button class="sz-node" style="--x:14%;--y:27%"
+      data-title="Toán học ứng dụng"
+      data-desc="Vận dụng tư duy logic, đo lường và giải quyết vấn đề qua các thử thách thực tế.">
+      <span class="sz-icon">📐</span><span class="sz-number">11</span>
+      <span class="sz-node-name">Toán học ứng dụng</span>
+    </button>
+
+    <button class="sz-node" style="--x:30%;--y:12%"
+      data-title="Khoa học đời sống"
+      data-desc="Khám phá tự nhiên, môi trường và những ứng dụng khoa học gần gũi trong cuộc sống.">
+      <span class="sz-icon">🔬</span><span class="sz-number">12</span>
+      <span class="sz-node-name">Khoa học đời sống</span>
+    </button>
+
+    <!-- Tâm STEM -->
+    <button class="sz-stem-hub" id="szStemHub"
+      aria-label="Xem giới thiệu chương trình STEM">
+      <span class="sz-hub-orbit"></span>
+      <span class="sz-hub-light">✦</span>
+      <span class="sz-hub-small">KHÁM PHÁ VÀ SÁNG TẠO</span>
+      <span class="sz-hub-title">STEM</span>
+      <span class="sz-hub-bottom">Học bằng trải nghiệm</span>
+      <span class="sz-hub-plus">+</span>
+    </button>
+
+    <!-- Khung thông tin dùng chung -->
+    <div class="sz-info-card" id="szStemInfo" role="status" aria-live="polite">
+      <button class="sz-info-close" id="szStemClose" aria-label="Đóng">×</button>
+      <span class="sz-info-label">STEAMZONE · KHÁM PHÁ STEM</span>
+      <h3 id="szStemInfoTitle">Chương trình STEM</h3>
+      <p id="szStemInfoDesc">
+        Chương trình STEM/STEAM kết hợp kiến thức khoa học, công nghệ,
+        kỹ thuật và toán học thông qua hoạt động thực hành, sáng tạo,
+        làm việc nhóm và giải quyết vấn đề.
+      </p>
+      <span class="sz-info-line"></span>
+    </div>
+  </div>
+
+  <div class="sz-stem-hint">
+    <span class="sz-hint-dot"></span>
+    Rê chuột vào từng lĩnh vực để khám phá
+    <span class="sz-hint-dot"></span>
+  </div>
+</section>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+#sz-stem-section,
+#sz-stem-section * {
+  box-sizing: border-box;
+}
+
+#sz-stem-section {
+  --sz-orange: #ff681f;
+  --sz-yellow: #ffca35;
+  --sz-teal: #00a99e;
+  --sz-navy: #153c60;
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 66px 24px 30px;
+  overflow: hidden;
+  isolation: isolate;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--sz-navy);
+  background: #fffaf0;
+}
+
+#sz-stem-section .sz-stem-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url('https://stemzone.vn/wp-content/uploads/2026/10/Phong-nen-giao-duc-pastel-toi-gian.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#sz-stem-section .sz-stem-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 251, 243, .10);
+  pointer-events: none;
+}
+
+#sz-stem-section .sz-stem-heading {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto 16px;
+  text-align: center;
+}
+
+#sz-stem-section .sz-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #e86a24;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+#sz-stem-section .sz-stem-heading h2 {
+  margin: 0 0 12px;
+  color: var(--sz-navy);
+  font-size: clamp(27px, 3.2vw, 43px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -1.4px;
+}
+
+#sz-stem-section .sz-stem-heading h2 span {
+  color: var(--sz-orange);
+}
+
+#sz-stem-section .sz-stem-heading p {
+  margin: 0 auto;
+  max-width: 680px;
+  color: #36546c;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+#sz-stem-section .sz-stem-stage {
+  position: relative;
+  width: min(100%, 1100px);
+  height: 590px;
+  margin: 0 auto;
+}
+
+/* Các nút lĩnh vực */
+#sz-stem-section .sz-node {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  z-index: 3;
+  display: flex;
+  width: 96px;
+  min-height: 105px;
+  padding: 10px 5px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255,255,255,.95);
+  border-radius: 22px;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 7px 20px rgba(32,73,83,.12);
+  color: var(--sz-navy);
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease,
+    border-color .25s ease;
+}
+
+#sz-stem-section .sz-node:hover,
+#sz-stem-section .sz-node:focus-visible,
+#sz-stem-section .sz-node.sz-active {
+  z-index: 10;
+  transform: translate(-50%, -56%) scale(1.08);
+  border-color: var(--sz-orange);
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(255,104,31,.24);
+  outline: none;
+}
+
+#sz-stem-section .sz-icon {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff0d9;
+  font-size: 25px;
+  line-height: 1;
+}
+
+#sz-stem-section .sz-number {
+  color: #e96a25;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+#sz-stem-section .sz-node-name {
+  display: block;
+  max-width: 100%;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+/* Tâm STEM */
+#sz-stem-section .sz-stem-hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  display: flex;
+  width: 228px;
+  height: 228px;
+  padding: 25px 14px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  border: 8px solid rgba(255,255,255,.88);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #10b9aa 0%, #008f91 100%);
+  box-shadow:
+    0 0 0 5px rgba(255,192,48,.9),
+    0 15px 35px rgba(0,120,125,.24);
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+#sz-stem-section .sz-stem-hub:hover,
+#sz-stem-section .sz-stem-hub:focus-visible {
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow:
+    0 0 0 7px rgba(255,192,48,.95),
+    0 18px 42px rgba(0,120,125,.3);
+  outline: none;
+}
+
+#sz-stem-section .sz-hub-orbit {
+  position: absolute;
+  inset: 12px;
+  border: 1px dashed rgba(255,255,255,.5);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#sz-stem-section .sz-hub-light {
+  margin-bottom: 2px;
+  color: #ffdb58;
+  font-size: 29px;
+  line-height: 1;
+}
+
+#sz-stem-section .sz-hub-small {
+  margin-top: 7px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+#sz-stem-section .sz-hub-title {
+  color: #fff4a8;
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 0 rgba(0,83,92,.18);
+}
+
+#sz-stem-section .sz-hub-bottom {
+  margin-top: 8px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+#sz-stem-section .sz-hub-plus {
+  position: absolute;
+  right: 15px;
+  top: 14px;
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffca35;
+  color: #174563;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* Thẻ thông tin bật khi rê chuột hoặc bấm */
+#sz-stem-section .sz-info-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 20;
+  display: none;
+  width: min(340px, calc(100% - 24px));
+  padding: 25px 25px 23px;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255,255,255,.95);
+  border-radius: 23px;
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 18px 55px rgba(19,60,85,.23);
+  text-align: left;
+}
+
+#sz-stem-section .sz-info-card.sz-info-visible {
+  display: block;
+  animation: szInfoIn .22s ease-out;
+}
+
+@keyframes szInfoIn {
+  from { opacity: 0; translate: 0 8px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+#sz-stem-section .sz-info-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #e86a24;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+}
+
+#sz-stem-section .sz-info-card h3 {
+  margin: 0 20px 10px 0;
+  color: var(--sz-navy);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+#sz-stem-section .sz-info-card p {
+  margin: 0;
+  color: #526779;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+#sz-stem-section .sz-info-line {
+  display: block;
+  width: 48px;
+  height: 5px;
+  margin-top: 17px;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #ff681f, #ffcc35);
+}
+
+#sz-stem-section .sz-info-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #fff0df;
+  color: #e86a24;
+  font-family: inherit;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+#sz-stem-section .sz-stem-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 3px auto 0;
+  color: #426176;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#sz-stem-section .sz-hint-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: var(--sz-orange);
+}
+
+/* Máy tính bảng */
+@media (max-width: 900px) {
+  #sz-stem-section {
+    padding: 48px 14px 25px;
+  }
+
+  #sz-stem-section .sz-stem-stage {
+    height: 500px;
+    width: min(100%, 720px);
+  }
+
+  #sz-stem-section .sz-node {
+    width: 78px;
+    min-height: 88px;
+    border-radius: 17px;
+  }
+
+  #sz-stem-section .sz-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    font-size: 20px;
+  }
+
+  #sz-stem-section .sz-node-name {
+    font-size: 9px;
+  }
+
+  #sz-stem-section .sz-stem-hub {
+    width: 180px;
+    height: 180px;
+  }
+
+  #sz-stem-section .sz-hub-title {
+    font-size: 44px;
+  }
+
+  #sz-stem-section .sz-hub-small {
+    font-size: 7px;
+  }
+
+  #sz-stem-section .sz-hub-bottom {
+    font-size: 9px;
+  }
+}
+
+/* Điện thoại: sắp xếp thành lưới, giữ STEM ở trung tâm */
+@media (max-width: 560px) {
+  #sz-stem-section {
+    padding: 38px 13px 25px;
+  }
+
+  #sz-stem-section .sz-stem-heading {
+    margin-bottom: 22px;
+  }
+
+  #sz-stem-section .sz-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  #sz-stem-section .sz-stem-heading h2 {
+    font-size: 27px;
+    letter-spacing: -.7px;
+  }
+
+  #sz-stem-section .sz-stem-heading p {
+    font-size: 12px;
+  }
+
+  #sz-stem-section .sz-stem-stage {
+    display: grid;
+    height: auto;
+    min-height: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 0 10px;
+  }
+
+  #sz-stem-section .sz-node {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    min-height: 106px;
+    padding: 10px 4px;
+    transform: none;
+    border-radius: 16px;
+  }
+
+  #sz-stem-section .sz-node:hover,
+  #sz-stem-section .sz-node:focus-visible,
+  #sz-stem-section .sz-node.sz-active {
+    transform: translateY(-3px);
+  }
+
+  #sz-stem-section .sz-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 21px;
+  }
+
+  #sz-stem-section .sz-node-name {
+    font-size: 9px;
+  }
+
+  #sz-stem-section .sz-number {
+    font-size: 9px;
+  }
+
+  #sz-stem-section .sz-stem-hub {
+    position: relative;
+    left: auto;
+    top: auto;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 174px;
+    height: 174px;
+    margin: 0 auto 12px;
+    transform: none;
+  }
+
+  #sz-stem-section .sz-stem-hub:hover,
+  #sz-stem-section .sz-stem-hub:focus-visible {
+    transform: scale(1.03);
+  }
+
+  #sz-stem-section .sz-info-card {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: calc(100% - 34px);
+    max-width: 360px;
+    transform: translate(-50%, -50%);
+  }
+
+  #sz-stem-section .sz-info-card h3 {
+    font-size: 20px;
+  }
+
+  #sz-stem-section .sz-info-card p {
+    font-size: 12px;
+  }
+
+  #sz-stem-section .sz-stem-hint {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sz-stem-section *,
+  #sz-stem-section *::before,
+  #sz-stem-section *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+
+<script>
+(function () {
+  const root = document.getElementById('sz-stem-section');
+  if (!root || root.dataset.szReady === '1') return;
+  root.dataset.szReady = '1';
+
+  const hub = root.querySelector('#szStemHub');
+  const info = root.querySelector('#szStemInfo');
+  const title = root.querySelector('#szStemInfoTitle');
+  const desc = root.querySelector('#szStemInfoDesc');
+  const close = root.querySelector('#szStemClose');
+  const nodes = root.querySelectorAll('.sz-node');
+
+  const introTitle = 'Khám phá thế giới STEM';
+  const introDesc =
+    'Chương trình STEM/STEAM kết hợp khoa học, công nghệ, kỹ thuật và toán học thông qua hoạt động trải nghiệm, thực hành và sáng tạo. Học sinh được khuyến khích tư duy logic, làm việc nhóm và giải quyết vấn đề thực tế.';
+
+  function showInfo(heading, paragraph, activeNode) {
+    title.textContent = heading;
+    desc.textContent = paragraph;
+    info.classList.add('sz-info-visible');
+
+    nodes.forEach(function (node) {
+      node.classList.toggle('sz-active', node === activeNode);
+    });
+  }
+
+  function hideInfo() {
+    info.classList.remove('sz-info-visible');
+    nodes.forEach(function (node) {
+      node.classList.remove('sz-active');
+    });
+  }
+
+  hub.addEventListener('mouseenter', function () {
+    showInfo(introTitle, introDesc, null);
+  });
+
+  hub.addEventListener('focus', function () {
+    showInfo(introTitle, introDesc, null);
+  });
+
+  hub.addEventListener('click', function () {
+    if (info.classList.contains('sz-info-visible') &&
+        title.textContent === introTitle) {
+      hideInfo();
+    } else {
+      showInfo(introTitle, introDesc, null);
+    }
+  });
+
+  nodes.forEach(function (node) {
+    function openNode() {
+      showInfo(node.dataset.title, node.dataset.desc, node);
+    }
+
+    node.addEventListener('mouseenter', openNode);
+    node.addEventListener('focus', openNode);
+    node.addEventListener('click', openNode);
+  });
+
+  close.addEventListener('click', hideInfo);
+
+  root.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') hideInfo();
+  });
+
+  /* Đưa nội dung về giới thiệu khi chuột rời khỏi khu vực tương tác.
+     Không tự đóng trên thiết bị cảm ứng. */
+  const stage = root.querySelector('.sz-stem-stage');
+  stage.addEventListener('mouseleave', function () {
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      hideInfo();
+    }
+  });
+})();
+</script>
+
+<div id="sz-steam-fields">
+  <div class="szsf-inner">
+
+    <!-- THÔNG TIN BÊN TRÁI -->
+    <div class="szsf-info" aria-live="polite">
+      <div class="szsf-quote">“</div>
+      <div class="szsf-eyebrow">STEAMZONE · GIÁO DỤC SÁNG TẠO</div>
+      <h2 class="szsf-title">Khám phá 12 lĩnh vực STEAM</h2>
+      <p class="szsf-desc">
+        Chương trình STEM với hơn 36 lĩnh vực STEM/STEAM được thiết kế theo chuẩn quốc tế và bám sát nội dung chương trình giáo dục phổ thông. Các hoạt động trải nghiệm đa dạng, tổ chức theo hình thức Team Building; hệ thống theo dõi và đánh giá chất lượng học tập qua phần mềm LMS.
+      </p>
+      <div class="szsf-line"></div>
+      <div class="szsf-hint">Cùng STEAMZone khám phá và sáng tạo tương lai.</div>
+      <div class="szsf-quote-bottom">”</div>
+    </div>
+
+    <!-- KHU VỰC 12 HUY HIỆU -->
+    <div class="szsf-stage">
+
+      <!-- ĐƯỜNG KẾT NỐI -->
+      <svg class="szsf-lines" viewBox="0 0 1000 700"
+           preserveAspectRatio="none" aria-hidden="true">
+        <g fill="none" stroke="#8998ad"
+           stroke-width="2" stroke-dasharray="5 8" opacity=".7">
+          <path d="M620 350 L385 85"/>
+          <path d="M620 350 L510 65"/>
+          <path d="M620 350 L650 55"/>
+          <path d="M620 350 L780 90"/>
+          <path d="M620 350 L875 190"/>
+          <path d="M620 350 L910 350"/>
+          <path d="M620 350 L820 590"/>
+          <path d="M620 350 L680 625"/>
+          <path d="M620 350 L535 625"/>
+          <path d="M620 350 L400 575"/>
+          <path d="M620 350 L300 430"/>
+          <path d="M620 350 L300 175"/>
+        </g>
+      </svg>
+
+      <!-- LOGO TRUNG TÂM -->
+      <div class="szsf-center">
+        <img
+          src="https://stemzone.vn/wp-content/uploads/2026/11/Nhan-may-STEAM-phat-sang.png"
+          alt="Lĩnh vực STEAM STEAMZone">
+      </div>
+
+      <!-- 01 -->
+      <button class="szsf-card szsf-c1"
+        data-title="STEAM Ẩm thực"
+        data-desc="Khám phá thế giới ẩm thực thông qua hoạt động chế biến món ăn, tìm hiểu dinh dưỡng, nguyên liệu và ứng dụng khoa học trong nấu nướng.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Huy-hieu-Am-thuc-hap-dan.png" alt="STEAM 01 - Ẩm thực">
+      </button>
+
+      <!-- 02 -->
+      <button class="szsf-card szsf-c2"
+        data-title="STEAM Cơ khí kỹ thuật"
+        data-desc="Tìm hiểu nguyên lý cơ khí, máy móc và kỹ thuật chế tạo. Học sinh được thực hành lắp ráp, thiết kế và sáng tạo những mô hình kỹ thuật.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Huy-hieu-STEAM-Co-khi-ky-thuat.png" alt="STEAM 02 - Cơ khí kỹ thuật">
+      </button>
+
+      <!-- 03 -->
+      <button class="szsf-card szsf-c3"
+        data-title="STEAM Kiến trúc xây dựng"
+        data-desc="Khám phá kiến trúc và xây dựng qua các hoạt động thiết kế mô hình, tìm hiểu kết cấu công trình và phát triển tư duy không gian.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Huy-hieu-STEAM-Kien-truc-xay-dung.png" alt="STEAM 03 - Kiến trúc xây dựng">
+      </button>
+
+      <!-- 04 -->
+      <button class="szsf-card szsf-c4"
+        data-title="STEAM Lập trình"
+        data-desc="Phát triển tư duy logic và kỹ năng giải quyết vấn đề thông qua lập trình, thiết kế trò chơi và xây dựng các sản phẩm công nghệ.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Huy-hieu-STEAM-lap-trinh-04.png" alt="STEAM 04 - Lập trình">
+      </button>
+
+      <!-- 05 -->
+      <button class="szsf-card szsf-c5"
+        data-title="STEAM Nông nghiệp sạch"
+        data-desc="Tìm hiểu nông nghiệp thông minh, trồng trọt bền vững, quy trình chăm sóc cây và ứng dụng công nghệ trong sản xuất nông nghiệp.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Huy-hieu-STEAM-Nong-nghiep-sach-05.png" alt="STEAM 05 - Nông nghiệp sạch">
+      </button>
+
+      <!-- 06 -->
+      <button class="szsf-card szsf-c6"
+        data-title="STEAM Thời trang"
+        data-desc="Khơi dậy khả năng sáng tạo thông qua thiết kế thời trang, phối màu, chất liệu và ứng dụng công nghệ trong ngành công nghiệp sáng tạo.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Huy-hieu-thoi-trang-STEAM-06.png" alt="STEAM 06 - Thời trang">
+      </button>
+
+      <!-- 07 -->
+      <button class="szsf-card szsf-c7"
+        data-title="STEAM Sáng tạo MakerSpace"
+        data-desc="Không gian sáng tạo để học sinh tự thiết kế, thử nghiệm và chế tạo sản phẩm. Khuyến khích tư duy đổi mới và khả năng giải quyết vấn đề thực tế.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Huy-hieu-Rocket-STEAM-07-Sang-tao.png" alt="STEAM 07 - Sáng tạo MakerSpace">
+      </button>
+
+      <!-- 08 -->
+      <button class="szsf-card szsf-c8"
+        data-title="STEAM Khoa học"
+        data-desc="Khám phá các hiện tượng khoa học, hóa học và vật liệu thông qua thí nghiệm thực hành, quan sát và trải nghiệm khám phá.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/The-STEAM-08_-Hoa-hoc-va-vat-lieu.png" alt="STEAM 08 - Khoa học">
+      </button>
+
+      <!-- 09 -->
+      <button class="szsf-card szsf-c9"
+        data-title="STEAM Robotics"
+        data-desc="Học sinh tìm hiểu robot, cơ cấu chuyển động, cảm biến và lập trình điều khiển. Từ đó tự lắp ráp, vận hành và sáng tạo robot giải quyết các thử thách thực tế.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Huy-hieu-STEAM-Robotics-09-ruc-ro.png" alt="STEAM 09 - Robotics">
+      </button>
+
+      <!-- 10 -->
+      <button class="szsf-card szsf-c10"
+        data-title="STEAM Kết nối vạn vật (IoT)"
+        data-desc="Khám phá Internet vạn vật (IoT), cảm biến và các thiết bị thông minh. Học sinh thực hành kết nối, thu thập dữ liệu và xây dựng mô hình ứng dụng.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Huy-hieu-IoT-STEAM-mau-cam.png" alt="STEAM 10 - IoT">
+      </button>
+
+      <!-- 11 -->
+      <button class="szsf-card szsf-c11"
+        data-title="STEAM Thiết kế và in ấn 3D"
+        data-desc="Phát triển tư duy thiết kế không gian thông qua phần mềm mô hình hóa 3D, sáng tạo sản phẩm và trải nghiệm công nghệ in 3D.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Thiet-ke-va-In-an-3D.png" alt="STEAM 11 - Thiết kế và in ấn 3D">
+      </button>
+
+      <!-- 12 -->
+      <button class="szsf-card szsf-c12"
+        data-title="STEAM Năng lượng"
+        data-desc="Tìm hiểu các nguồn năng lượng tái tạo như năng lượng mặt trời và gió. Học sinh khám phá cách chuyển hóa năng lượng và ứng dụng vào thực tế.">
+        <img src="https://stemzone.vn/wp-content/uploads/2026/11/Huy-hieu-STEAM-12_-Nang-luong-mat-troi.png" alt="STEAM 12 - Năng lượng">
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+/* =====================================
+   STEAMZONE - ISOLATED COMPONENT
+===================================== */
+
+#sz-steam-fields,
+#sz-steam-fields * {
+  box-sizing: border-box !important;
+}
+
+#sz-steam-fields {
+  width: 100vw !important;
+  max-width: none !important;
+  position: relative !important;
+  left: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  font-family: 'Montserrat', sans-serif !important;
+  background: #fffaf0 url('https://stemzone.vn/wp-content/uploads/2026/10/Phong-nen-giao-duc-pastel-toi-gian.png') center center / cover no-repeat !important;
+  color: #082653;
+  isolation: isolate;
+}
+
+#sz-steam-fields button,
+#sz-steam-fields h2,
+#sz-steam-fields p {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#sz-steam-fields .szsf-inner {
+  width: 100%;
+  max-width: 1800px;
+  min-height: 790px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* =====================================
+   LEFT INFORMATION PANEL
+===================================== */
+
+#sz-steam-fields .szsf-info {
+  position: absolute;
+  z-index: 5;
+  left: 3.5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 350px;
+  min-height: 400px;
+  padding: 42px 32px 35px;
+  border: 4px solid #fff;
+  border-radius: 38px;
+  background: linear-gradient(145deg, #06aaa8, #008d96);
+  color: #fff;
+  box-shadow: 0 14px 35px rgba(0, 111, 120, .18);
+  transition: box-shadow .3s ease;
+}
+
+#sz-steam-fields .szsf-quote {
+  position: absolute;
+  top: -27px;
+  left: 20px;
+  color: #ffcf29;
+  font-size: 95px;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 3px 5px 0 rgba(255, 130, 0, .2);
+}
+
+#sz-steam-fields .szsf-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  color: #d5ffff;
+}
+
+#sz-steam-fields .szsf-title {
+  color: #fff !important;
+  font-size: 28px !important;
+  line-height: 1.4 !important;
+  font-weight: 900 !important;
+  letter-spacing: -.8px;
+  margin: 0 0 22px !important;
+  transition: opacity .2s ease;
+}
+
+#sz-steam-fields .szsf-desc {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 2 !important;
+  color: #fff !important;
+  margin: 0 !important;
+  transition: opacity .2s ease;
+}
+
+#sz-steam-fields .szsf-line {
+  height: 5px;
+  width: 55px;
+  background: #ffb33b;
+  border-radius: 20px;
+  margin: 24px 0 18px;
+}
+
+#sz-steam-fields .szsf-hint {
+  font-size: 10px;
+  font-weight: 700;
+  color: #d5ffff;
+  line-height: 1.8;
+}
+
+#sz-steam-fields .szsf-quote-bottom {
+  position: absolute;
+  right: 15px;
+  bottom: -23px;
+  color: #ffcf29;
+  font-size: 90px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+/* =====================================
+   FIELD STAGE
+===================================== */
+
+#sz-steam-fields .szsf-stage {
+  position: relative;
+  width: 100%;
+  height: 790px;
+  margin-left: 0;
+}
+
+#sz-steam-fields .szsf-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#sz-steam-fields .szsf-center {
+  position: absolute;
+  z-index: 3;
+  left: 62%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 245px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sz-steam-fields .szsf-center img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* =====================================
+   BADGES
+===================================== */
+
+#sz-steam-fields .szsf-card {
+  position: absolute !important;
+  z-index: 4;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 125px !important;
+  height: 170px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  transform: translate(-50%, -50%);
+  transition: transform .28s ease, filter .28s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#sz-steam-fields .szsf-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transition: filter .28s ease;
+}
+
+#sz-steam-fields .szsf-card:hover,
+#sz-steam-fields .szsf-card:focus-visible,
+#sz-steam-fields .szsf-card.szsf-active {
+  z-index: 8;
+  transform: translate(-50%, -50%) scale(1.14);
+  filter: drop-shadow(0 10px 12px rgba(255, 143, 0, .28));
+}
+
+#sz-steam-fields .szsf-card:focus-visible {
+  outline: 2px solid #ffb22b !important;
+  outline-offset: 4px;
+}
+
+#sz-steam-fields .szsf-card:hover img,
+#sz-steam-fields .szsf-card.szsf-active img {
+  filter: saturate(1.12) brightness(1.04);
+}
+
+/* =====================================
+   12 FIXED POSITIONS
+===================================== */
+
+#sz-steam-fields .szsf-c1  { left: 38.5%; top: 12%; }
+#sz-steam-fields .szsf-c2  { left: 50.5%; top: 10%; }
+#sz-steam-fields .szsf-c3  { left: 64%; top: 10%; }
+#sz-steam-fields .szsf-c4  { left: 77%; top: 13%; }
+#sz-steam-fields .szsf-c5  { left: 88%; top: 25%; }
+#sz-steam-fields .szsf-c6  { left: 90%; top: 51%; }
+#sz-steam-fields .szsf-c7  { left: 82%; top: 77%; }
+#sz-steam-fields .szsf-c8  { left: 68%; top: 82%; }
+#sz-steam-fields .szsf-c9  { left: 54%; top: 82%; }
+#sz-steam-fields .szsf-c10 { left: 40%; top: 77%; }
+#sz-steam-fields .szsf-c11 { left: 30%; top: 55%; }
+#sz-steam-fields .szsf-c12 { left: 30%; top: 28%; }
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+  #sz-steam-fields .szsf-inner {
+    min-height: 700px;
+  }
+
+  #sz-steam-fields .szsf-stage {
+    height: 700px;
+  }
+
+  #sz-steam-fields .szsf-info {
+    width: 285px;
+    padding: 35px 24px;
+  }
+
+  #sz-steam-fields .szsf-title {
+    font-size: 23px !important;
+  }
+
+  #sz-steam-fields .szsf-desc {
+    font-size: 11px !important;
+  }
+
+  #sz-steam-fields .szsf-card {
+    width: 100px !important;
+    height: 145px !important;
+  }
+
+  #sz-steam-fields .szsf-center {
+    width: 195px;
+    left: 62%;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 767px) {
+  #sz-steam-fields {
+    overflow: hidden !important;
+  }
+
+  #sz-steam-fields .szsf-inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 55px 16px 35px;
+    gap: 30px;
+  }
+
+  #sz-steam-fields .szsf-info {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    min-height: 0;
+    padding: 35px 25px;
+    border-radius: 28px;
+  }
+
+  #sz-steam-fields .szsf-title {
+    font-size: 25px !important;
+  }
+
+  #sz-steam-fields .szsf-desc {
+    font-size: 12px !important;
+    line-height: 1.9 !important;
+  }
+
+  #sz-steam-fields .szsf-stage {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 8px;
+    height: auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  #sz-steam-fields .szsf-lines {
+    display: none;
+  }
+
+  #sz-steam-fields .szsf-center {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    grid-column: 1 / -1;
+    width: 180px;
+    margin: 0 auto 15px;
+  }
+
+  #sz-steam-fields .szsf-card {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 0.76;
+    max-width: 125px;
+    justify-self: center;
+  }
+
+  #sz-steam-fields .szsf-card:hover,
+  #sz-steam-fields .szsf-card.szsf-active {
+    transform: scale(1.06) !important;
+  }
+
+  #sz-steam-fields .szsf-card img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+</style>
+
+<script>
+(function () {
+  function initSteamFields() {
+    var root = document.getElementById('sz-steam-fields');
+    if (!root || root.dataset.initialized === '1') return;
+
+    root.dataset.initialized = '1';
+
+    var cards = root.querySelectorAll('.szsf-card');
+    var title = root.querySelector('.szsf-title');
+    var desc = root.querySelector('.szsf-desc');
+
+    var defaultTitle = 'Khám phá 12 lĩnh vực STEAM';
+    var defaultDesc = 'Chương trình STEM với hơn 36 lĩnh vực STEM/STEAM được thiết kế theo chuẩn quốc tế và bám sát nội dung chương trình giáo dục phổ thông. Các hoạt động trải nghiệm đa dạng, tổ chức theo hình thức Team Building; hệ thống theo dõi và đánh giá chất lượng học tập qua phần mềm LMS.';
+
+    function showInfo(card) {
+      if (!card || !title || !desc) return;
+
+      cards.forEach(function (item) {
+        item.classList.remove('szsf-active');
+      });
+
+      card.classList.add('szsf-active');
+
+      title.style.opacity = '0';
+      desc.style.opacity = '0';
+
+      window.setTimeout(function () {
+        title.textContent = card.getAttribute('data-title') || defaultTitle;
+        desc.textContent = card.getAttribute('data-desc') || defaultDesc;
+
+        title.style.opacity = '1';
+        desc.style.opacity = '1';
+      }, 160);
+    }
+
+    function resetInfo() {
+      cards.forEach(function (item) {
+        item.classList.remove('szsf-active');
+      });
+
+      title.textContent = defaultTitle;
+      desc.textContent = defaultDesc;
+      title.style.opacity = '1';
+      desc.style.opacity = '1';
+    }
+
+    cards.forEach(function (card) {
+      card.addEventListener('mouseenter', function () {
+        showInfo(card);
+      });
+
+      card.addEventListener('focus', function () {
+        showInfo(card);
+      });
+
+      card.addEventListener('click', function () {
+        showInfo(card);
+      });
+    });
+
+    var stage = root.querySelector('.szsf-stage');
+
+    if (stage) {
+      stage.addEventListener('mouseleave', resetInfo);
+    }
+
+    root.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        resetInfo();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSteamFields);
+  } else {
+    initSteamFields();
+  }
+})();
+</script>
 </body>
 </html>
